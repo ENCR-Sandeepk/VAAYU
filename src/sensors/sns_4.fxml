@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="865.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sensors.Sns_4Controller">
+    <children>
+        <Pane layoutX="16.0" layoutY="16.0" prefHeight="224.0" prefWidth="833.0" style="-fx-background-color: #E0E8F8; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #FFFFFF33;">
+            <children>
+                <Label fx:id="lbl_sensor_tag" layoutX="98.0" layoutY="16.0" prefHeight="30.0" prefWidth="165.0" text="Sensor Tag">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="266.0" layoutY="16.0" prefHeight="30.0" prefWidth="30.0" text="IP" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_sensor_ip_address" layoutX="296.0" layoutY="16.0" prefHeight="30.0" prefWidth="135.0" text="------" textFill="#363853">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="431.0" layoutY="16.0" prefHeight="30.0" prefWidth="40.0" text="Port" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_sensor_port_number" layoutX="471.0" layoutY="16.0" prefHeight="30.0" prefWidth="50.0" text="-----" textFill="#363853">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" layoutX="591.0" layoutY="16.0" prefHeight="30.0" prefWidth="70.0" text="last reading">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_last_reading_date_time" layoutX="665.0" layoutY="16.0" prefHeight="30.0" prefWidth="150.0" text="----------- --:--:--" textFill="#11216f">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Pane layoutX="16.0" layoutY="62.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="505.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                    <children>
+                        <Label layoutX="50.0" layoutY="12.0" prefHeight="24.0" prefWidth="88.0" text="Wind Speed" textFill="#363853">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_u_value" layoutX="365.0" layoutY="12.0" prefHeight="30.0" prefWidth="130.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_v_value" layoutX="365.0" layoutY="42.0" prefHeight="30.0" prefWidth="130.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_w_value" layoutX="365.0" layoutY="72.0" prefHeight="30.0" prefWidth="130.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_wind_speed" layoutX="12.0" layoutY="48.0" prefHeight="45.0" prefWidth="180.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="18.0" fitWidth="28.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/speed.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lbl_sensor_u_text" layoutX="195.0" layoutY="12.0" prefHeight="30.0" prefWidth="170.0" text="Direction U (East)" textFill="#6c6767">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_v_text" layoutX="195.0" layoutY="42.0" prefHeight="30.0" prefWidth="170.0" text="Direction V (North)" textFill="#6c6767">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_w_text" layoutX="195.0" layoutY="72.0" prefHeight="30.0" prefWidth="170.0" text="Direction W (Up)" textFill="#6c6767">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutX="537.0" layoutY="62.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                    <children>
+                        <Label fx:id="lbl_sensor_wind_direction" layoutX="12.0" layoutY="48.0" prefHeight="45.0" prefWidth="130.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/direction.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="50.0" layoutY="12.0" prefHeight="24.0" prefWidth="88.0" text="Wind Direction" textFill="#363853">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_sensor_wind_speed_1" layoutX="145.0" layoutY="48.0" prefHeight="45.0" prefWidth="130.0" text="-----" textFill="#11216f">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                  <Label fx:id="lbl_toggle_ws" layoutX="187.0" layoutY="12.0" prefHeight="24.0" prefWidth="88.0" text="Wind Speed" textFill="#363853">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="img_toggle_ws" fitHeight="18.0" fitWidth="28.0" layoutX="150.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/speed.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </Pane>
+                <Label layoutX="16.0" layoutY="190.0" prefHeight="20.0" prefWidth="45.0" text="Type" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_sensor_type" layoutX="61.0" layoutY="190.0" prefHeight="20.0" prefWidth="70.0" text="2D">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="524.0" layoutY="190.0" prefHeight="20.0" prefWidth="105.0" text="Sensor Add. V" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_sensor_address_vertical" layoutX="629.0" layoutY="190.0" prefHeight="20.0" prefWidth="30.0" text="--">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="682.0" layoutY="190.0" prefHeight="20.0" prefWidth="105.0" text="Sensor Add. H" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lbl_sensor_address_horizontal" layoutX="787.0" layoutY="190.0" prefHeight="20.0" prefWidth="30.0" text="--">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="16.0" layoutY="16.0" prefHeight="30.0" prefWidth="80.0" text="Sensor Tag" textFill="#6c6767">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            <Label layoutX="211.0" layoutY="190.0" prefHeight="20.0" prefWidth="95.0" text="Alarm Cutoff" textFill="#6c6767">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_alarm_cutoff" layoutX="306.0" layoutY="190.0" prefHeight="20.0" prefWidth="150.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

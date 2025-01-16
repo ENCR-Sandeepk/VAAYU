@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="865.0" style="-fx-background-color: #EFF3FB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.Sensor_Configuration_Controller">
+    <children>
+        <Label layoutX="16.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="75.0" text="Sensors" textFill="#11216f" wrapText="true">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="btn_edit_sensor_setup" alignment="BASELINE_LEFT" graphicTextGap="0.0" layoutX="679.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#action_btn_edit_sensor_setup" prefHeight="35.0" prefWidth="170.0" ripplerFill="#11216f" style="-fx-background-color: transparent;" text="  Edit Sensor Setup" textFill="#11216f">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <graphic>
+                <ImageView accessibleText="Project List" fitHeight="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/edit_scan.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <effect>
+                <Blend />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </JFXButton>
+        <JFXButton fx:id="btn_save_setup" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="748.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#action_btn_save_setup" prefHeight="35.0" prefWidth="100.0" ripplerFill="#11216f" style="-fx-background-color: #1D38BF; -fx-border-radius: 8; -fx-background-radius: 8;" text="Save Setup" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <effect>
+                <Blend />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </JFXButton>
+        <Separator layoutX="16.0" layoutY="51.0" prefWidth="833.0" style="-fx-background-color: #11216F;" />
+        <Label layoutX="16.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="50.0" text="Seq. No." textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="76.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="40.0" text="Type" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="146.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="50.0" text="Address" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="251.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="85.0" text="Model" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="371.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Alarm Cutoff" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="496.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" text="IP Address &amp; Port" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="661.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="75.0" text="Sensor Tag" textFill="#363853" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Separator layoutX="16.0" layoutY="94.0" prefWidth="833.0" style="-fx-background-color: #11216F;" />
+        <ScrollPane layoutY="98.0" prefHeight="422.0" prefWidth="880.0" style="-fx-background-color: #EFF3FB;">
+            <content>
+                <AnchorPane prefHeight="2326.0" prefWidth="864.0" style="-fx-background-color: #EFF3FB;">
+                    <children>
+                        <Pane layoutX="16.0" layoutY="16.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="1" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_1" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_1" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_1" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_1" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g1" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_1" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_1" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g1">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_h_sns_1" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_1" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_1" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_1" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_1" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_1" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <ComboBox fx:id="cbb_addr_v_sns_1" layoutX="150.0" layoutY="16.0" prefHeight="30.0" prefWidth="70.0" />
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="132.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="2" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_2" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_2" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_2" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_2" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g2" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_2" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_2" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g2">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_2" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_2" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_2" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_2" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_2" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_2" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_2" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="248.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="3" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_3" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_3" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_3" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_3" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g3" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_3" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_3" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g3">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_3" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_3" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_3" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_3" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_3" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_3" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_3" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="364.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="4" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_4" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_4" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_4" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_4" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g4" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_4" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_4" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g4">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_4" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_4" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_4" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_4" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_4" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_4" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_4" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="480.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="5" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_5" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_5" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_5" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_5" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g5" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_5" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_5" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g5">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_5" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_5" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_5" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_5" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_5" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_5" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_5" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="596.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="6" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_6" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_6" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_6" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_6" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g6" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_6" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_6" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g6">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_6" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_6" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_6" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_6" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_6" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_6" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_6" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="712.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="7" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_7" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_7" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_7" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_7" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g7" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_7" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_7" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g7">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_7" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_7" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_7" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_7" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_7" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_7" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_7" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="828.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="8" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_8" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_8" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_8" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_8" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g8" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_8" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_8" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g8">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_8" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_8" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_8" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_8" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_8" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_8" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_8" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="944.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="9" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_9" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_9" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_9" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_9" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g9" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_9" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_9" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g9">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_9" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_9" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_9" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_9" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_9" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_9" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_9" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1060.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="10" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_10" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_10" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_10" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_10" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g10" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_10" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_10" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g10">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_10" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_10" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_10" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_10" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_10" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_10" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_10" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1176.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="11" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_11" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_11" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_11" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_11" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g11" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_11" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_11" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g11">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_11" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_11" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_11" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_11" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_11" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_11" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_11" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1292.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="12" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_12" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_12" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_12" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_12" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g12" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_12" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_12" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g12">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_12" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_12" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_12" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_12" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_12" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_12" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_12" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1408.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="13" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_13" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_13" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_13" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_13" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g13" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_13" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_13" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g13">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_13" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_13" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_13" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_13" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_13" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_13" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_13" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1524.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="14" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_14" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_14" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_14" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_14" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g14" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_14" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_14" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g14">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_14" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_14" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_14" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_14" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_14" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_14" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_14" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1640.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="15" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_15" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_15" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_15" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_15" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g15" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_15" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_15" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g15">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_15" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_15" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_15" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_15" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_15" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_15" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_15" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1756.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="16" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_16" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_16" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_16" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_16" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g16" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_16" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_16" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g16">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_16" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_16" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_16" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_16" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_16" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_16" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_16" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1872.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="17" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_17" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_17" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_17" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_17" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g17" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_17" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_17" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g17">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_17" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_17" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_17" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_17" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_17" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_17" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_17" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="1988.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="18" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_18" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_18" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_18" layoutX="60.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_18" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g18" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_18" layoutX="60.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_18" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g18">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_18" layoutX="150.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_18" layoutX="150.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_18" layoutX="235.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_18" layoutX="475.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_18" layoutX="475.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_18" layoutX="645.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_18" layoutX="355.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="2104.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="19" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_19" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_19" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_19" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_19" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g19" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_19" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_19" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g19">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_19" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_19" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_19" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_19" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_19" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_19" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_19" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="16.0" layoutY="2220.0" prefHeight="100.0" prefWidth="833.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8;">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" text="20" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <CheckBox fx:id="cb_sns_20" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_cb_sns_20" prefHeight="30.0" prefWidth="30.0" textAlignment="CENTER" textFill="#3a1c9d">
+                                    <font>
+                                        <Font name="System Bold" size="21.0" />
+                                    </font>
+                                </CheckBox>
+                                <RadioButton fx:id="rb_2d_sns_20" layoutX="60.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_2d_sns_20" prefHeight="30.0" prefWidth="50.0" text="2D" textFill="#363853">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="g20" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rb_3d_sns_20" layoutX="60.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#action_rb_3d_sns_20" prefHeight="30.0" prefWidth="50.0" text="3D" textFill="#363853" toggleGroup="$g20">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </RadioButton>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="V" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="130.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" text="H" textAlignment="CENTER" textFill="#363853" wrapText="true">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbb_addr_v_sns_20" layoutX="150.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_addr_h_sns_20" layoutX="150.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="70.0" />
+                                <ComboBox fx:id="cbb_manufacturer_sns_20" layoutX="235.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" />
+                                <TextField fx:id="tf_ip_addr_sns_20" layoutX="475.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="IP Address">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_port_no_sns_20" layoutX="475.0" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Port No.">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_tag_20" layoutX="645.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="180.0" promptText="Sensor Tag">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="tf_sns_alarm_cutoff_20" layoutX="355.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" promptText="Alarm Cutoff">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
